@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en"> 
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width,
+            initial-scale=1.0" />
+            <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="shortcut icon" href="assets/favicon.jpg" type="image/x-icon"/>
+            <link rel="stylesheet" href="styles.css" />
+
+        </head>
+
+        <body>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo">
+                        <a id="nav_logo" href="index.html"><img src="assets/logo.jpg" alt="Home" height="85px"/></a>
+                    </div>
+                    <div class="main_menu">
+                        <ul class="navbar_menu">
+
+                            <li>
+                                <a href="index.html"><p>Home</p></a>
+                            </li>
+
+                            <li>
+                                <a href="https://dellarte.com/about-dellarte-international/"><p>About Us</p></a>
+                            </li>
+
+                            <li>
+                                <a href="profile.html"><p>Login</p></a>
+                            </li>
+
+                            <li>
+                                <a class="btn" href="/"><p class="button"><i class="fas fa-user"></i> Sign Up</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <h1> Dell'Arte Alumni Network </h1>
+
+
+            <form action="google.com" method="get" class="search_container">
+                <label for="find_alum"><i id="search-icon" class="fa-solid fa-magnifying-glass"></i></label>
+                <input class="search" type="search" id="find_alum" />
+                <label for="find_alum"><i id="clear-icon" class="fa-solid fa-circle-xmark"></i></label>
+            </form>
+
+            <div id="map">
+                <script>
+                    mapboxgl.accessToken = "pk.eyJ1IjoidGFubmVybTQyOSIsImEiOiJjbTd6OXNzcmswaDFnMmpvamZwZmNwMmdxIn0.2XdzpVErWz9BA-Y3U9uBJg"
+                    const map = new mapboxgl.Map({
+                        container: "map",
+                        style: "mapbox://styles/mapbox/dark-v11",
+                        center:[-12, 30],
+                        zoom: 1.55
+                    })
+                    map.setProjection('mercator');
+                </script>
+            </div>
+        </body>
+    </html>
+
+
+
+
+
+    

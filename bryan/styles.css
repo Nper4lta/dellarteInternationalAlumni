@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: rgb(47, 55, 100, 1);
+}
+
+h1{
+    text-align:center;
+    color: darkgoldenrod;
+    font-size: 56px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(181, 85, 85, 1);
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.navbar{
+    padding: 20px;
+}
+
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .main_menu ul{
+    display: flex;
+}
+
+.navbar ul li a{
+    padding: 10px 22px;
+    display: block;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover{
+    color: rgb(105, 105, 111, 1);
+}
+
+.navbar ul li a i{
+    margin-right: 8px;
+}
+.navbar ul li:last-child a{
+    margin-left: 10px;
+}
+/* Utility Classes */
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn{
+    display: inline-block;
+    background: rgb(217, 217, 224, 1);
+    padding: 13px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+
+.search_container{
+    position: relative;
+    display: flex;
+    width: 70%;
+    margin: 50px auto 50px;
+    min-width: 100px;
+    max-width: 800px;
+}
+
+#search-icon{
+    position: absolute;
+    top: 17px;
+    left: 17px;
+}
+
+#clear-icon{
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    cursor: pointer;
+
+}
+
+.search{
+    border: 1px solid grey;
+    border-radius: 15px;
+    height: 50px;
+    width: 100%;
+    padding: 2px 100px 2px 30px;
+    outline: 0;
+    background-color: rgb(142, 136, 134, 1);
+}
+
+.search:hover, .search:focus{
+    border: 1.5px solid rgb(76, 72, 71, 1);
+    background-color: rgb(181, 178, 178, 1);
+}
+
+#map{
+    border: 15px solid black;
+    border-radius: 10px;
+    margin: 30px auto 30px;
+    padding: 200px;
+    height: 600px;
+    width:80%;
+}
