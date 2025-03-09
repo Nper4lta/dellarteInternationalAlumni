@@ -1,5 +1,5 @@
 # Dell' Arte International Alumni Database
-This is a web based alumni database to track graduates of 50+ years. There is 2 different users, admin and alumni. Admins manage the alumni and different programs that they attend, while alumni can make a profile of themselves. Plus, there is a map view where you can see where the graduates are located. 
+This is a web based alumni database to track graduates of 50+ years. There are 2 different users, admin and alumni. Admins manage the alumni and different programs that they attend, while alumni can make a profile of themselves. Plus, there is a map view where you can see where the graduates are located. 
 ## No Dependencies
 
 ## Set-Up
