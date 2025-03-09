@@ -1,8 +1,7 @@
 <?php
 require_once("hum_conn_no_login.php");
 
-// $alumniName = htmlspecialchars(strip_tags($_POST["identifier"]));
-$alumniName = "Nathan";
+$alumniName = htmlspecialchars(strip_tags($_POST["identifier"]));
 $connection = hum_conn_no_login();
 
 $alumniQuery = oci_parse ($connection, "
@@ -29,4 +28,6 @@ $state = oci_results($alumniQuery, 'STATE_PROVINCE');
 
 
 ?> 
-
+<h1> 
+$fname 
+</h1>
