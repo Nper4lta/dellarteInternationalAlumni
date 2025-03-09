@@ -1,0 +1,18 @@
+body
+{ 
+    background-color:white; 
+}
+
+div  {
+    padding: 10px;
+    border: 1px solid black;
+}
+input {
+    margin:0;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
