@@ -1,9 +1,9 @@
 <?php
 require_once("hum_conn_no_login.php");
 
+// $alumniName = htmlspecialchars(strip_tags($_POST["identifier"]));
+$alumniName = "Nathan";
 $connection = hum_conn_no_login();
-
-$alumniName = htmlspecialchars(strip_tags($_POST["placeHolder"]));
 
 $alumniQuery = oci_parse ($connection, "
 	select FIRST_NAME, 
@@ -11,9 +11,10 @@ $alumniQuery = oci_parse ($connection, "
 		CITY,
 		STATE_PROVINCE 
 	from users
+	where FIRST_NAME = :input_alumniName OR LAST_NAME  = :input_alumniName
 	");
 
-oci_bind_by_name($alumniQuery);
+oci_bind_by_name($alumniQuery, ":input_alumniName", $alumniName);
 oci_execute($alumniQuery, OCI_DEFAULT);
 
 if (!oci_fetch($alumniQuery)) {
