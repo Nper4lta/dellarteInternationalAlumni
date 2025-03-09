@@ -7,10 +7,9 @@
 <html>
     <body> 
         <h1> Alumni Sign Up Form </h1>
-        <form action="/databaseCon/databaseConnection.php" method="POST">
+        <form action="../databaseCon/databaseConnection.php" method="POST">
 
-            <label for="fname"> First Name:</label>
-            <input type="text" id="fname" name="fname"></br>
+            First Name: <input type="text" name="fname"><br>
 
            <!-- 
             <label for="lname"> Last Name:</label>
@@ -25,7 +24,7 @@
             <label for="address"> Address: </label>
             <input type="text" id="address" name="address"></br> 
            --> 
-            <input type="submit" value="Submit">
+            <input type="submit">
         </form>
     </body>
 </html>
