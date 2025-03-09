@@ -2,7 +2,8 @@
 <?php echo $_SERVER['DOCUMENT_ROOT']; ?>
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="settingsStyle.css">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="createAccountSettings.css">
 </head>
 <html>
     <body> 
@@ -12,7 +13,6 @@
             <label for="fname"> First Name:</label>
             <input type="text" id="fname" name="fname"></br>
 
-           <!-- 
             <label for="lname"> Last Name:</label>
             <input type="text" id="lname" name="lname"></br>
 
@@ -24,7 +24,6 @@
 
             <label for="address"> Address: </label>
             <input type="text" id="address" name="address"></br> 
-           --> 
             <input type="submit" value="Submit">
         </form>
     </body>

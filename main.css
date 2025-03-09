@@ -1,0 +1,202 @@
+:root {
+	
+	/* Colors */
+	--green-1: #C3FFCC;
+	--green-2: #85D290;
+	--green-3: #4BC05C;
+	--green-4: #058F19;
+	
+	--blue-1: #B1CFF2;
+	--blue-2: #64A3EC;
+	--blue-3: #2580E8;
+	--blue-4: #1363BF;
+	
+	--red-1: #FDE1E5;
+	--red-2: #EC8795;
+	--red-3: #E0495E;
+	--red-4: #B30E0E;
+	
+	--monotone-1: #FFF;
+	--monotone-2: #E8E8E8;
+	--monotone-3: #CDCDCD;
+	--monotone-4: #C0C0C0;
+	--monotone-5: #797979;
+	--monotone-6: #616161;
+	--monotone-7: #424242;
+	--monotone-8: #000;
+
+	/* Navigation Bar */
+
+}
+
+body{
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: rgb(47, 55, 100, 1);
+}
+
+h1{
+    text-align:center;
+    color: var(--green-4);
+    font-size: 56px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 50px;
+}
+
+h2{ 
+    text-align:center;
+    color: var(--green-4);
+    font-size: 30px;
+}
+label{
+    text-align:center;
+}
+input{
+    text-align:center;
+}
+form{
+    color: var(--green-4);
+}
+p{
+    text-align:center;
+}
+
+a{
+    text-decoration: none;
+    text-align:center;
+    color: rgb(181, 85, 85, 1);
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+hr{
+    width:90%;
+    margin: 20px auto 50px;
+}
+
+
+.search_container{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.navbar{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-style: solid;
+    border-color: blue;
+}
+
+.navbar .logo{
+    display: flex;
+    border-style: solid;
+    border-color: purple;
+    align-items: center;
+    margin-right: 300px;
+    margin-bottom: 90px;
+}
+
+#nav_logo{
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-color: darkblue;
+}
+
+.navbar .main_menu{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: teal;
+    align-items: center;
+}
+
+.navbar_menu{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 100px;
+}
+
+.navbar .main_menu .navbar_menu li{
+    width: 70px;
+    text-align: center;
+    border-style: solid;
+    border-color: yellow;
+    margin: 10px;
+}
+
+/*
+
+NOTE: This is used to style the list elements Home, About Us, Login, and Sign Up
+.navbar .main_menu ul{
+
+}
+*/
+
+.navbar ul li a:hover{
+    color: rgb(105, 105, 111, 1);
+}
+
+/* Footer */
+
+.footer{
+    padding: 40px 0;
+}
+
+.footer h4{
+    margin-bottom: 10px;  
+}
+
+footer a{
+    color:#ccc;
+}
+
+.footer-grid{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer .card{
+    background-color:#fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 30px 30px 0;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+}
+
+#email_ref{
+    width: 250px;
+}
+
+#refer {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+#foot_btn{
+    color: #fff;
+    background-color: #4891ff;
+}
