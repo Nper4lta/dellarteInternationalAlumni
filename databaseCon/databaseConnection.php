@@ -26,8 +26,4 @@ $lname = oci_results($alumniQuery, 'LAST_NAME');
 $city = oci_results($alumniQuery, 'CITY');
 $state = oci_results($alumniQuery, 'STATE_PROVINCE');
 
-
 ?> 
-<h1> 
-$fname 
-</h1>
