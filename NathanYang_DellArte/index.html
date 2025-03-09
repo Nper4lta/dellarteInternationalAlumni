@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html lang="en"> 
+        <head>
+            <!-- 
+                LINK: https://nrs-projects.humboldt.edu/~ny39/DellArte/bryan/index.html
+            -->
+            <meta charset="UTF-8" />
+            <title></title>
+            <meta name="viewport" content="width=device-width,
+            initial-scale=1.0" />
+            <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+            <link rel="stylesheet" href="https://nrs-projects.humboldt.edu/~ny39/DellArte/bryan/main.css"/>
+            <link rel="stylesheet" href="https://nrs-projects.humboldt.edu/~ny39/DellArte/bryan/map.css"/>
+            <link rel="shortcut icon" href="assets/favicon.jpg" type="image/x-icon"/>
+        </head>
+
+        <body>
+            <nav class="navbar">
+
+                <div class="logo">
+                    <a id="nav_logo" href="index.html">
+                        <img src="assets/logo.jpg" alt="Home" height="85px"/>
+                    </a>
+                </div>
+
+                <div class="main_menu">
+                    <ul class="navbar_menu">
+                        <li>
+                            <a href="index.html"><p>Home</p></a>
+                        </li>
+                        <li>
+                            <a href="https://dellarte.com/about-dellarte-international/"><p>About Us</p></a>
+                        </li>
+                        <li>
+                            <a href="login.html"><p>Login</p></a>
+                        </li>
+                        <li>
+                            <a href="sign_up.html"><p>Sign Up</p></a>
+                        </li>
+                    </ul>
+
+                </div>
+                
+            </nav>
+            
+            <h1> Dell'Arte Alumni Network </h1>
+
+            <!--
+                request_name() goes here
+            -->
+
+            <form method="get" action="search_name.php">
+                <label for="find_alum">
+                    <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input class="search" type="text" id="input_alumni_name" name="input_alumni_name"/>
+                <button type="submit" id="form-button">Search</button>
+            </form>
+
+            <div id="map">
+                <script>
+                    mapboxgl.accessToken = "pk.eyJ1IjoidGFubmVybTQyOSIsImEiOiJjbTd6OXNzcmswaDFnMmpvamZwZmNwMmdxIn0.2XdzpVErWz9BA-Y3U9uBJg"
+                    const map = new mapboxgl.Map({
+                        container: "map",
+                        style: "mapbox://styles/mapbox/dark-v11",
+                        center:[-12, 30],
+                        zoom: 1.55
+                    })
+                    map.setProjection('mercator');
+                </script>
+            </div>
+
+            <footer class="footer">
+                <hr />
+                <div class="container">
+                    <div class="footer-grid">
+
+                        <div class="card">
+                            <h4> Dell'Arte Theatre </h4>
+                            <address>
+                                PO Box 816,
+                                <br>
+                                Blue Lake, CA 95525
+                                <br>
+                                <a href="info@dellarte.com">info@dellarte.com</a>
+                                <br>
+                                707-668-5663
+                            </address>
+                        </div>
+
+                        <div class="card" id="email_ref">
+                            <h4> Refer a Peer: </h4>
+                            <p> 
+                                Encourage fellow alumni to join the network 
+                            </p>
+                            <form>
+                                <input type="email" name="refer" id="refer" placeholde="peername@email.com"/>
+                                <button type="submit" class="btn" id="foot_btn">Refer</button>
+                            </form>
+                        </div>
+
+                        <div>
+                            <h4></h4>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        </body>
+    </html>
+
+
+
+
+
+    

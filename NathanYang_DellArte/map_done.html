@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+    <html lang="en"> 
+        <head>
+            <!-- 
+                LINK: https://nrs-projects.humboldt.edu/~ny39/DellArte/bryan/map_done.html
+            -->
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width,
+            initial-scale=1.0" />
+            <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="shortcut icon" href="assets/favicon.jpg" type="image/x-icon"/>
+            <link rel="stylesheet" href="styles.css" />
+
+            <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0/web.js"></script>
+
+            <style>
+                .marker {
+                background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                }
+
+                .mapboxgl-popup {
+                max-width: 200px;
+                }
+
+                .mapboxgl-popup-content {
+                 text-align: center;
+                  font-family: 'Open Sans', sans-serif;
+                }
+
+
+            </style>
+
+        </head>
+
+        <body>
+            <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+            <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo">
+                        <a id="nav_logo" href="index.html"><img src="assets/logo.jpg" alt="Home" height="85px"/></a>
+                    </div>
+                    <div class="main_menu">
+                        <ul class="navbar_menu">
+
+                            <li>
+                                <a href="index.html"><p>Home</p></a>
+                            </li>
+
+                            <li>
+                                <a href="https://dellarte.com/about-dellarte-international/"><p>About Us</p></a>
+                            </li>
+
+                            <li>
+                                <a href="profile.html"><p>Login</p></a>
+                            </li>
+
+                            <li>
+                                <a class="btn" href="/"><p class="button"><i class="fas fa-user"></i> Sign Up</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <h1> Dell'Arte Alumni Network </h1>
+
+            
+
+
+
+
+
+            <form action="google.com" method="get" class="search_container">
+                <label for="find_alum"><i id="search-icon" class="fa-solid fa-magnifying-glass"></i></label>
+                <input class="search" type="search" id="find_alum" />
+                <label for="find_alum"><i id="clear-icon" class="fa-solid fa-circle-xmark"></i></label>
+            </form>
+
+            <div id="map">
+                <script>
+                    const ACCESS_TOKEN = 'pk.eyJ1IjoidGFubmVybTQyOSIsImEiOiJjbTd6OXNzcmswaDFnMmpvamZwZmNwMmdxIn0.2XdzpVErWz9BA-Y3U9uBJg';
+                    mapboxgl.accessToken = ACCESS_TOKEN;
+
+                    /*
+                    const geojson = {
+                        type: 'FeatureCollection',
+                        features: [
+                            {
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [-77.032, 38.913]
+                                },
+                                properties: {
+                                    title: 'Frank Hastle',
+                                    description: 'Washington, D.C.'
+                                }
+                            },
+                            {
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [-122.414, 37.776]
+                                },
+                                properties: {
+                                    title: 'Jesse Peters',
+                                    description: 'San Francisco, California'
+                                }
+                            },
+                            {
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [-115.85786301189437, 42.76381290227181]
+                                },
+                                properties: {
+                                    title: 'Brad Smith',
+                                    description: 'Boise, Idaho'
+                                }
+                            }
+                        ]
+                    };
+
+*/
+
+
+
+
+
+
+/* Request location data from database */
+                    const search_word = "95973"
+                    //const zip_codes = ["94103","10001","60606","33401","75001","08001","90210","20500","02115","48226","55401"]
+
+                const profiles = [{
+    zip_code: "95521",
+    name: "Bryan",
+    location: "Arcata"
+},
+{
+    zip_code: "95973",
+    name: "Tom",
+    location: "Chico"
+},
+{
+    zip_code: "10001",
+    name: "Emma",
+    location: "New York"
+},
+{
+    zip_code: "90210",
+    name: "Sophie",
+    location: "Beverly Hills"
+},
+{
+    zip_code: "75001",
+    name: "Pierre",
+    location: "Paris"
+},
+{
+    zip_code: "20009",
+    name: "Liam",
+    location: "Washington DC"
+},
+{
+    zip_code: "02115",
+    name: "Olivia",
+    location: "Boston"
+},
+{
+    zip_code: "60601",
+    name: "Michael",
+    location: "Chicago"
+},
+{
+    zip_code: "94103",
+    name: "Aiden",
+    location: "San Francisco"
+},
+{
+    zip_code: "80202",
+    name: "Isabella",
+    location: "Denver"
+},
+{
+    zip_code: "98101",
+    name: "Noah",
+    location: "Seattle"
+},
+{
+    zip_code: "33101",
+    name: "Sophia",
+    location: "Miami"
+},
+{
+    zip_code: "2000",
+    name: "James",
+    location: "Sydney"
+},
+{
+    zip_code: "3000",
+    name: "Charlotte",
+    location: "Melbourne"
+},
+{
+    zip_code: "6000",
+    name: "William",
+    location: "Perth"
+},
+{
+    zip_code: "1000",
+    name: "Maria",
+    location: "Brussels"
+},
+{
+    zip_code: "10115",
+    name: "Hans",
+    location: "Berlin"
+},
+{
+    zip_code: "28001",
+    name: "Elena",
+    location: "Madrid"
+},
+{
+    zip_code: "00100",
+    name: "Marco",
+    location: "Rome"
+},
+{
+    zip_code: "1012",
+    name: "Lotte",
+    location: "Amsterdam"
+},
+{
+    zip_code: "100-0001",
+    name: "Hiro",
+    location: "Tokyo"
+},
+{
+    zip_code: "400702",
+    name: "Priya",
+    location: "Mumbai"
+},
+{
+    zip_code: "201301",
+    name: "Raj",
+    location: "New Delhi"
+},
+{
+    zip_code: "2001",
+    name: "Thabo",
+    location: "Cape Town"
+},
+{
+    zip_code: "6001",
+    name: "Fatima",
+    location: "Cairo"
+},
+{
+    zip_code: "01000",
+    name: "Ana",
+    location: "Mexico City"
+},
+{
+    zip_code: "01310",
+    name: "Lucas",
+    location: "São Paulo"
+}]
+
+
+
+     profiles.forEach(function(profile){
+        draw_user(profile)
+     })               
+/* make api request with search term */
+
+function draw_user(profile){
+
+    const request_url = `https://api.mapbox.com/search/geocode/v6/forward?q=${profile.zip_code}&access_token=pk.eyJ1IjoidGFubmVybTQyOSIsImEiOiJjbTd6OXNzcmswaDFnMmpvamZwZmNwMmdxIn0.2XdzpVErWz9BA-Y3U9uBJg`
+                    
+  /* store data in json */
+
+    fetch(request_url)
+  .then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    /* draw points */
+    draw_points(data, profile);  
+  });
+
+
+}
+
+                    const map = new mapboxgl.Map({
+                        container: "map",
+                        style: "mapbox://styles/mapbox/dark-v11",
+                        center: [-12, 30],
+                        zoom: 1.55
+                    })
+                    map.setProjection('mercator');
+                    map.addControl(new mapboxgl.FullscreenControl(), 'top-left');
+
+
+
+
+
+                    window.addEventListener('load', () => {
+                        const searchBox = new MapboxSearchBox();
+                        searchBox.accessToken = ACCESS_TOKEN;
+                        searchBox.options = {
+                            proximity: [-73.99209, 40.68933]
+                        };
+                        searchBox.marker = true;
+                        searchBox.mapboxgl = mapboxgl;
+                        map.addControl(searchBox);
+                    });
+
+
+
+
+
+
+
+
+/*
+
+                    for (const feature of geojson.features) {
+                        const el = document.createElement('div');
+                        el.className = 'marker';
+
+
+                        new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+
+                        new mapboxgl.Marker(el)
+                            .setLngLat(feature.geometry.coordinates)
+                            .setPopup(
+                                new mapboxgl.Popup({ offset: 25 }) // add popups
+                                    .setHTML(
+                                        `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                                    )
+                            )
+                            .addTo(map);
+                    }
+                            */
+
+                    function draw_points(geojson2, profile)
+                    {
+                    for (const feature of geojson2.features) {
+                        const el = document.createElement('div');
+                        el.className = 'marker';
+
+
+                        new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+
+                        new mapboxgl.Marker(el)
+                            .setLngLat(feature.geometry.coordinates)
+                            .setPopup(
+                                new mapboxgl.Popup({ offset: 25 }) // add popups
+                                    .setHTML(
+                                        `<h3>${profile.name}</h3><p>${profile.location}</p>`
+                                    )
+                            )
+                            .addTo(map);
+                    }
+                };
+
+                </script>
+            </div>
+
+
+            <footer class="footer">
+                <hr />
+            <div class="container">
+                <div class="footer-grid">
+
+                <div class="card">
+                    <h4> Dell'Arte Theatre </h4>
+                    <address>
+                        PO Box 816,
+                        <br>
+                        Blue Lake, CA 95525
+                        <br>
+                        <a href="info@dellarte.com">info@dellarte.com</a>
+                        <br>
+                        707-668-5663
+                    </address>
+                </div>
+
+                <div class="card" id="email_ref">
+                    <h4> Refer a Peer: </h4>
+                    <p> Encourage fellow alumni to join the network </p>
+                    <form>
+                        <input type="email" name="refer" id="refer" placeholde="peername@email.com"/>
+                        <button type="submit" class="btn" id="foot_btn">Refer</button>
+                    </form>
+                </div>
+
+                <div>
+                    <h4></h4>
+                </div>
+
+            </div>
+            </div>
+            </footer>
+        </body>
+    </html>
+
+
+
+
+
+    

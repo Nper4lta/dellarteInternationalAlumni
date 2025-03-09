@@ -1,0 +1,10 @@
+.searched_names_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table, th, td{
+    border: 4px solid;
+    border-collapse: collapse;
+}
