@@ -1,41 +1,34 @@
-<!DOCTYPE html>
 <?php
-
 require_once("hum_conn_no_login.php");
 
 $alumniName = htmlspecialchars(strip_tags($_POST["fname"]));
 $connection = hum_conn_no_login();
 
-$alumniQuery = oci_parse ($connection, "
-	select first_name
+$alumniQuery = oci_parse($connection, "
+	select FIRST_NAME
 	from users
-	where first_name = :input_alumniName
+	where FIRST_NAME = :fname
 	");
 
-oci_bind_by_name($alumniQuery, ":input_alumniName", $alumniName);
+oci_bind_by_name($alumniQuery, ":fname", $alumniName);
 oci_execute($alumniQuery, OCI_DEFAULT);
-oci_fetch($alumniQuery);
-/*
 if (!oci_fetch($alumniQuery)) {
 	die("invalid!");
 }
- */
-?>
 
-<?php
-
-$fname = oci_results($alumniQuery, 'first_name');
+$firstName = oci_result($alumniQuery, 'first_name');
 
 /*
 $lname = oci_results($alumniQuery, 'LAST_NAME');
 $city = oci_results($alumniQuery, 'CITY');
-$state = oci_results($alumniQuery, 'STATE_PROVINCE');
-*/
+$state = oci_results($alumniQuery, 'STATE_PROVINCE'); */
 ?> 
 
 <html>
 	<body> 
-	Testing <?php echo $fname; ?> 
+<?php
+	echo $firstName;
+?>
 	</body>	
 
 
