@@ -2,7 +2,9 @@
 form {
     text-align:center;
 }
-
+footer {
+    text-align: center;
+}
 
 /* Container for all profiles using flexbox in row direction */
 .profiles-wrapper {
